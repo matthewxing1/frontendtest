@@ -1,39 +1,36 @@
-.chessboard { 
+.chessboard-wrapper {
+  display: flex;
+  flex-grow: 1;
+  max-width: 90vh;
+  max-height: 90vw;
+}
+
+.chessboard-row {
   width: 100%;
-  border-spacing: 0; 
-  border-collapse: collapse; 
 }
-.chessboard td {
-  /* width: 12vw; */
-  height: 12vw;
+
+.chessboard-row>div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 11.25%;
+  aspect-ratio: 1 / 1;
 }
-.chessboard .light {
+
+.light {
   text-align: center;
   background: #abdbe3;
 }
-.chessboard .dark {
+
+.dark {
   text-align: center;
   background: #eeeee4;
 }
-.chessboard-wrapper {
-  width: 90%;
-}
-.sidebar {
-  height: 100%;
-  width: 10%;
-  position: fixed;
-  top: 0;
-  right: 0;
-}
 
-@media screen and (max-height: 900px){
-  .chessboard-wrapper {
-    height: 90vh;
-    width: 100%;
-  }
-  .sidebar {
-    top: calc(100vh - 100px);
-    width: 100%;
-    
-  }
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 10vw;
+  margin-left: 10px;
 }
