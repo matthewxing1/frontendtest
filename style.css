@@ -11,11 +11,11 @@
   max-height: 90vw;
 }
 
-.chessboard-row {
+.chessboard-col {
   width: 100%;
 }
 
-.chessboard-row>div {
+.chessboard-col>div {
   display: flex;
   align-items: center;
   justify-content: center;
