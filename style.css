@@ -4,7 +4,7 @@
   border-collapse: collapse; 
 }
 .chessboard td {
-  width: 12vw;
+  /* width: 12vw; */
   height: 12vw;
 }
 .chessboard .light {
@@ -15,10 +15,25 @@
   text-align: center;
   background: #eeeee4;
 }
+.chessboard-wrapper {
+  width: 90%;
+}
 .sidebar {
   height: 100%;
   width: 10%;
   position: fixed;
   top: 0;
   right: 0;
+}
+
+@media screen and (max-height: 900px){
+  .chessboard-wrapper {
+    height: 90vh;
+    width: 100%;
+  }
+  .sidebar {
+    top: calc(100vh - 100px);
+    width: 100%;
+    
+  }
 }

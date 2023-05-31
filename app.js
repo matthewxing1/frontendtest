@@ -8,7 +8,7 @@ Vue.createApp({
       {{move}}
     </div>
   </div>
-  <div style="width: 90%">
+  <div class="chessboard-wrapper">
     <table class="chessboard">
       <tbody>
         <tr>
