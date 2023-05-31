@@ -33,6 +33,11 @@
   background: #eeeee4;
 }
 
+.selected {
+  text-align: center;
+  background: orange;
+}
+
 .sidebar {
   display: flex;
   flex-direction: column;
