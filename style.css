@@ -1,6 +1,12 @@
+.container-wrapper {
+  display: flex;
+  flex-direction: row;
+}
+
 .chessboard-wrapper {
   display: flex;
-  flex-grow: 1;
+  flex-direction: row;
+  flex: 1;
   max-width: 90vh;
   max-height: 90vw;
 }
@@ -33,4 +39,26 @@
   height: 100%;
   width: 10vw;
   margin-left: 10px;
+  margin-right: 10px;
+}
+
+@media (max-height: 900px) and (max-width: 600px) {
+  .container-wrapper {
+    flex-direction: column;
+  }
+
+  .chessboard-wrapper {
+    margin-bottom: 30px;
+  }
+
+  .sidebar {
+    width: 90%;
+    margin-top: auto;
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .sidebar>div {
+    margin: 5px;
+  }
 }

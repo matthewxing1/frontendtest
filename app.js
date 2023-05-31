@@ -2,7 +2,7 @@
 
 Vue.createApp({
   template: `
-    <div style="display: flex">
+    <div class="container-wrapper">
       <div class="chessboard-wrapper">
         <div class="chessboard-row">
           <div @click="handleSelection('a8')" class="light">a8</div>
@@ -86,7 +86,7 @@ Vue.createApp({
         </div>
       </div>
       <div class="sidebar">
-        <h3>History</h3>
+        <h3>History: </h3>
         <div v-for="move in history">
           {{move}}
         </div>
