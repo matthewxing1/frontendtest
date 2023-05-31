@@ -42,18 +42,20 @@
   margin-right: 10px;
 }
 
-@media (max-height: 900px) and (max-width: 600px) {
+@media (max-height: 1920px) and (max-width: 1080px) {
   .container-wrapper {
     flex-direction: column;
   }
 
   .chessboard-wrapper {
-    margin-bottom: 30px;
+    margin-bottom: 10px;
+    max-width: 100vh;
+    max-height: 100vw;
   }
 
   .sidebar {
     width: 90%;
-    margin-top: auto;
+    height: 50px;
     flex-direction: row;
     align-items: center;
   }
