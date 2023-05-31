@@ -1,0 +1,22 @@
+.chessboard { 
+  width: 100%;
+  border-spacing: 0; 
+  border-collapse: collapse; 
+}
+.chessboard td {
+  width: 12vw;
+  height: 12vw;
+}
+/* .chessboard td:after {
+  content: "";
+  display: block;
+  padding-bottom: 100%;
+} */
+.chessboard .light {
+  text-align: center;
+  background: #abdbe3;
+}
+.chessboard .dark {
+  text-align: center;
+  background: #eeeee4;
+}
