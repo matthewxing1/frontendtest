@@ -5,84 +5,44 @@ Vue.createApp({
     <div class="container-wrapper">
       <div class="chessboard-wrapper">
         <div class="chessboard-row">
-          <div @click="handleSelection('a8')" class="light">a8</div>
-          <div @click="handleSelection('a7')" class="dark">a7</div>
-          <div @click="handleSelection('a6')" class="light">a6</div>
-          <div @click="handleSelection('a5')" class="dark">a5</div>
-          <div @click="handleSelection('a4')" class="light">a4</div>
-          <div @click="handleSelection('a3')" class="dark">a3</div>
-          <div @click="handleSelection('a2')" class="light">a2</div>
-          <div @click="handleSelection('a1')" class="dark">a1</div>
+          <div v-for="cell in row1" @click="handleSelection(cell.id)" :class="[ cell.selected ? 'selected' : cell.originalColor ]">
+            {{cell.id}}
+          </div>
         </div>
         <div class="chessboard-row">
-          <div @click="handleSelection('b8')" class="dark">b8</div>
-          <div @click="handleSelection('b7')" class="light">b7</div>
-          <div @click="handleSelection('b6')" class="dark">b6</div>
-          <div @click="handleSelection('b5')" class="light">b5</div>
-          <div @click="handleSelection('b4')" class="dark">b4</div>
-          <div @click="handleSelection('b3')" class="light">b3</div>
-          <div @click="handleSelection('b2')" class="dark">b2</div>
-          <div @click="handleSelection('b1')" class="light">b1</div>
+          <div v-for="cell in row2" @click="handleSelection(cell.id)" :class="[ cell.selected ? 'selected' : cell.originalColor ]">
+            {{cell.id}}
+          </div>
         </div>
         <div class="chessboard-row">
-          <div @click="handleSelection('c8')" class="light">c8</div>
-          <div @click="handleSelection('c7')" class="dark">c7</div>
-          <div @click="handleSelection('c6')" class="light">c6</div>
-          <div @click="handleSelection('c5')" class="dark">c5</div>
-          <div @click="handleSelection('c4')" class="light">c4</div>
-          <div @click="handleSelection('c3')" class="dark">c3</div>
-          <div @click="handleSelection('c2')" class="light">c2</div>
-          <div @click="handleSelection('c1')" class="dark">c1</div>
+          <div v-for="cell in row3" @click="handleSelection(cell.id)" :class="[ cell.selected ? 'selected' : cell.originalColor ]">
+            {{cell.id}}
+          </div>
         </div>
         <div class="chessboard-row">
-          <div @click="handleSelection('d8')" class="dark">d8</div>
-          <div @click="handleSelection('d7')" class="light">d7</div>
-          <div @click="handleSelection('d6')" class="dark">d6</div>
-          <div @click="handleSelection('d5')" class="light">d5</div>
-          <div @click="handleSelection('d4')" class="dark">d4</div>
-          <div @click="handleSelection('d3')" class="light">d3</div>
-          <div @click="handleSelection('d2')" class="dark">d2</div>
-          <div @click="handleSelection('d1')" class="light">d1</div>
+          <div v-for="cell in row4" @click="handleSelection(cell.id)" :class="[ cell.selected ? 'selected' : cell.originalColor ]">
+            {{cell.id}}
+          </div>
         </div>
         <div class="chessboard-row">
-          <div @click="handleSelection('e8')" class="light">e8</div>
-          <div @click="handleSelection('e7')" class="dark">e7</div>
-          <div @click="handleSelection('e6')" class="light">e6</div>
-          <div @click="handleSelection('e5')" class="dark">e5</div>
-          <div @click="handleSelection('e4')" class="light">e4</div>
-          <div @click="handleSelection('e3')" class="dark">e3</div>
-          <div @click="handleSelection('e2')" class="light">e2</div>
-          <div @click="handleSelection('e1')" class="dark">e1</div>
+          <div v-for="cell in row5" @click="handleSelection(cell.id)" :class="[ cell.selected ? 'selected' : cell.originalColor ]">
+            {{cell.id}}
+          </div>
         </div>
         <div class="chessboard-row">
-          <div @click="handleSelection('f8')" class="dark">f8</div>
-          <div @click="handleSelection('f7')" class="light">f7</div>
-          <div @click="handleSelection('f6')" class="dark">f6</div>
-          <div @click="handleSelection('f5')" class="light">f5</div>
-          <div @click="handleSelection('f4')" class="dark">f4</div>
-          <div @click="handleSelection('f3')" class="light">f3</div>
-          <div @click="handleSelection('f2')" class="dark">f2</div>
-          <div @click="handleSelection('f1')" class="light">f1</div>
+          <div v-for="cell in row6" @click="handleSelection(cell.id)" :class="[ cell.selected ? 'selected' : cell.originalColor ]">
+            {{cell.id}}
+          </div>
         </div>
         <div class="chessboard-row">
-            <div @click="handleSelection('g8')" class="light">g8</div>
-            <div @click="handleSelection('g7')" class="dark">g7</div>
-            <div @click="handleSelection('g6')" class="light">g6</div>
-            <div @click="handleSelection('g5')" class="dark">g5</div>
-            <div @click="handleSelection('g4')" class="light">g4</div>
-            <div @click="handleSelection('g3')" class="dark">g3</div>
-            <div @click="handleSelection('g2')" class="light">g2</div>
-            <div @click="handleSelection('g1')" class="dark">g1</div>
+          <div v-for="cell in row7" @click="handleSelection(cell.id)" :class="[ cell.selected ? 'selected' : cell.originalColor ]">
+            {{cell.id}}
+          </div>
         </div>
         <div class="chessboard-row">
-          <div @click="handleSelection('h8')" class="dark">h8</div>
-          <div @click="handleSelection('h7')" class="light">h7</div>
-          <div @click="handleSelection('h6')" class="dark">h6</div>
-          <div @click="handleSelection('h5')" class="light">h5</div>
-          <div @click="handleSelection('h4')" class="dark">h4</div>
-          <div @click="handleSelection('h3')" class="light">h3</div>
-          <div @click="handleSelection('h2')" class="dark">g1</div>
-          <div @click="handleSelection('h1')" class="light">h1</div>
+          <div v-for="cell in row8" @click="handleSelection(cell.id)" :class="[ cell.selected ? 'selected' : cell.originalColor ]">
+            {{cell.id}}
+          </div>
         </div>
       </div>
       <div class="sidebar">
@@ -95,14 +55,56 @@ Vue.createApp({
   `,
   data() {
     return {
+      row1: [{id: 'a8', selected: false, originalColor: 'light'}, {id: 'a7', selected: false, originalColor: 'dark'}, {id: 'a6', selected: false, originalColor: 'light'}, {id: 'a5', selected: false, originalColor: 'dark'}, {id: 'a4', selected: false, originalColor: 'light'}, {id: 'a3', selected: false, originalColor: 'dark'}, {id: 'a2', selected: false, originalColor: 'light'}, {id: 'a1', selected: false, originalColor: 'dark'}],
+      row2: [{id: 'b8', selected: false, originalColor: 'dark'}, {id: 'b7', selected: false, originalColor: 'light'}, {id: 'b6', selected: false, originalColor: 'dark'}, {id: 'b5', selected: false, originalColor: 'light'}, {id: 'b4', selected: false, originalColor: 'dark'}, {id: 'b3', selected: false, originalColor: 'light'}, {id: 'b2', selected: false, originalColor: 'dark'}, {id: 'b1', selected: false, originalColor: 'light'}],
+      row3: [{id: 'c8', selected: false, originalColor: 'light'}, {id: 'c7', selected: false, originalColor: 'dark'}, {id: 'c6', selected: false, originalColor: 'light'}, {id: 'c5', selected: false, originalColor: 'dark'}, {id: 'c4', selected: false, originalColor: 'light'}, {id: 'c3', selected: false, originalColor: 'dark'}, {id: 'c2', selected: false, originalColor: 'light'}, {id: 'c1', selected: false, originalColor: 'dark'}],
+      row4: [{id: 'd8', selected: false, originalColor: 'dark'}, {id: 'd7', selected: false, originalColor: 'light'}, {id: 'd6', selected: false, originalColor: 'dark'}, {id: 'd5', selected: false, originalColor: 'light'}, {id: 'd4', selected: false, originalColor: 'dark'}, {id: 'd3', selected: false, originalColor: 'light'}, {id: 'd2', selected: false, originalColor: 'dark'}, {id: 'd1', selected: false, originalColor: 'light'}],
+      row5: [{id: 'e8', selected: false, originalColor: 'light'}, {id: 'e7', selected: false, originalColor: 'dark'}, {id: 'e6', selected: false, originalColor: 'light'}, {id: 'e5', selected: false, originalColor: 'dark'}, {id: 'e4', selected: false, originalColor: 'light'}, {id: 'e3', selected: false, originalColor: 'dark'}, {id: 'e2', selected: false, originalColor: 'light'}, {id: 'e1', selected: false, originalColor: 'dark'}],
+      row6: [{id: 'f8', selected: false, originalColor: 'dark'}, {id: 'f7', selected: false, originalColor: 'light'}, {id: 'f6', selected: false, originalColor: 'dark'}, {id: 'f5', selected: false, originalColor: 'light'}, {id: 'f4', selected: false, originalColor: 'dark'}, {id: 'f3', selected: false, originalColor: 'light'}, {id: 'f2', selected: false, originalColor: 'dark'}, {id: 'f1', selected: false, originalColor: 'light'}],
+      row7: [{id: 'g8', selected: false, originalColor: 'light'}, {id: 'g7', selected: false, originalColor: 'dark'}, {id: 'g6', selected: false, originalColor: 'light'}, {id: 'g5', selected: false, originalColor: 'dark'}, {id: 'g4', selected: false, originalColor: 'light'}, {id: 'g3', selected: false, originalColor: 'dark'}, {id: 'g2', selected: false, originalColor: 'light'}, {id: 'g1', selected: false, originalColor: 'dark'}],
+      row8: [{id: 'h8', selected: false, originalColor: 'dark'}, {id: 'h7', selected: false, originalColor: 'light'}, {id: 'h6', selected: false, originalColor: 'dark'}, {id: 'h5', selected: false, originalColor: 'light'}, {id: 'h4', selected: false, originalColor: 'dark'}, {id: 'h3', selected: false, originalColor: 'light'}, {id: 'h2', selected: false, originalColor: 'dark'}, {id: 'h1', selected: false, originalColor: 'light'}],
+      lastSelected: null,
       move: 0,
       history: []
     }
   },
   methods: {
     handleSelection(coord){
-      this.move = this.move + 1;
-      this.history.push(`${this.move}. ${coord}`);
+      const map = {
+        a: 1,
+        b: 2,
+        c: 3,
+        d: 4,
+        e: 5,
+        f: 6,
+        g: 7,
+        h: 8
+      }
+      if(!this.lastSelected) {
+        // set lastSelected to first coord
+        this.lastSelected = coord;
+        // increment move order
+        this.move = this.move + 1;
+        // add new move into history
+        this.history.push(`${this.move}. ${coord}`);
+        // change property 'selected' to be true of cell
+        this[`row${map[coord[0]]}`][8 - coord[1]].selected = true;
+      }
+      else if(this.lastSelected === coord) {
+        // increment move order
+        this.move = this.move + 1;
+        // add new move into history
+        this.history.push(`${this.move}. ${coord}`);
+      }
+      else if(this.lastSelected && this.lastSelected !== coord) {
+        this[`row${map[this.lastSelected[0]]}`][8 - this.lastSelected[1]].selected = false;
+        this.lastSelected = coord;
+        this[`row${map[coord[0]]}`][8 - coord[1]].selected = true;
+        // increment move order
+        this.move = this.move + 1;
+        // add new move into history
+        this.history.push(`${this.move}. ${coord}`);
+      }
     }
   }
 }).mount('#app')
