@@ -96,7 +96,8 @@ Vue.createApp({
   },
   methods: {
     handleSelection(coord){
-
+      this.move = this.move + 1;
+      this.history = `${this.history} ${this.move}. ${coord}`;
     }
   }
 }).mount('#app')
